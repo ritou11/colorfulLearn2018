@@ -1,0 +1,57 @@
+.tabbox {height: 40px;}
+.tabbox .mytabs {bottom: -1px;}
+.tabbox .mytabs li {height: 40px;line-height: 40px;}
+.tabbox .mytabs li.active {height: 40px;line-height: 34px;}
+.tabbox .mytabs li.licenter {padding-left: 14px;padding-right: 14px;}
+.content .course-w {padding: 0 20px;}
+.detail .cont {margin-top: 20px;}
+.detail .cont > div {display: inline-block;}
+.detail .cont .left {width: 350px;}
+.detail .cont .navli .title {height: 40px;line-height: 40px;background-color:#f6f6f6;color: #1392f1;font-size: 14px;padding-left: 12px;}
+
+.navli .playli {height: 550px;overflow-y: auto;border: 1px solid #e8e8e8;}
+.navli .playli li {cursor: pointer;position: relative;height: 35px;line-height: 35px;padding-left: 24px}
+.navli .playli li .circle {width: 8px;height: 8px;border-radius: 6px;background-color: #d4d4d4;border:0;display: block;position: absolute;left:8px;top: 14px;}
+.navli .playli li .spancolor {margin-right: 10px;}
+.navli .playli li a {color: #555555;font-size: 14px;display: block}
+.navli .playli li span img {vertical-align: middle}
+.navli .playli ul:hover li .spancolor {color: #1392f1;}
+.navli .playli ul.selected {}
+.navli .playli ul.selected li{background :#f7f7f7;}
+
+.navli .playli ul.selected li i.circle {background-color: #1392f1;}
+.navli .playli ul.selected li .spancolor {color: #1392f1;font-weight: bold;}
+
+.detail .cont .right {width: 620px;}
+.detail .cont .video_player {height: 430px;background-color: #f5f5f5;}
+.detail .cont .video_player .video-info{height: 40px;line-height: 40px}
+.detail .cont .video_player .video-info p.title{color: #555555;font-size: 16px;margin-left: 14px;}
+.detail .cont .video_player .video-info p.more{color: #555555;font-size: 14px;margin-right: 14px;}
+.detail .cont .video_player .video-info p.more .file-size{margin-right: 24px;font-size: 12px}
+.detail .cont .video_player .video-info p.more a{color: #555555;}
+.detail .cont .video_player .video-info p.more i{margin-right: 10px;}
+
+
+.detail .cont .time {margin-top: 10px;}
+.detail .cont .time >p{float:left;color: #555555;font-size: 14px;}
+.detail .cont .time .shuoming{font-weight: bold;margin-right: 18px;text-indent:0;line-height: 24px;}
+.detail .cont .time .jieshao{width: 540px;text-align: justify;line-height: 24px;text-indent:0;overflow:auto;}
+.hide{
+    display:none;
+}
+.tabbox .mytabs li.active >p{line-height:34px;}
+.tabbox .mytabs li{max-width:105px;}
+.tabbox .mytabs li:first-child:after{width:0;}
+.tabbox .mytabs li >p{text-indent:0;text-overflow:ellipsis;overflow:hidden;word-break:all;white-space:nowrap;line-height:38px;text-align:center;}
+.tabbox .mytabs li:after{content:' ';
+position:absolute;left:-1px;top:10px;bottom:8px;width:1px;background:#c4c4c4;
+}
+.webicon-download.rt{margin-top: 7px;padding-right: 5px;padding-left: 5px;margin-right: 10px;}
+.tabbox .mytabs li.active:after{
+width:0;
+}
+.tabbox .mytabs{left:0;}
+.tabbox .mytabs li.addbtn{width:34px;padding:0;padding-top:8px;}
+.addbtn >a{width:24px;height:24px;display:inline-block;border-radius:50%;position:relative;}
+.addbtn >a i.webicon-increse{position:absolute;top:3px;right:3px;}
+.addbtn >a:hover{background:#e8e9ea;}
