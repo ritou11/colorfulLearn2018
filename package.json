@@ -1,0 +1,10 @@
+{
+  "name": "colorfulLearn2018",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "haotian",
+  "license": "MIT",
+  "dependencies": {
+    "css": "^2.2.4"
+  }
+}
