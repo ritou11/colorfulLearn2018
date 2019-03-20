@@ -3,10 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const css = require('css');
 const glob = require('glob');
+const { version } = require('./package.json');
 
 const resPath = 'res/';
 const orgColor = '#1392f1';
-const tarColor = '#843bca';
+const tarColor = '#743481';
 
 glob(path.join(resPath, '*.css'), {}, (err, files) => {
   if (err) {
@@ -47,5 +48,11 @@ glob(path.join(resPath, '*.css'), {}, (err, files) => {
   });
   const cssResults = _.join(tarCssList, '\n');
   fs.writeFileSync('res/result.css', cssResults);
+  const compiled = _.template(fs.readFileSync('tamper.template'));
+  fs.writeFileSync('tampermonkey/ChangeColor.js', compiled({
+    version,
+    cssContent: cssResults,
+    tarColor,
+  }));
   // console.log(cssResults);
 });

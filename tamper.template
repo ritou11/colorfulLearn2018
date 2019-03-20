@@ -1,0 +1,21 @@
+// ==UserScript==
+// @name         ChangeColor
+// @version      <%= version %>
+// @match        http://learn.tsinghua.edu.cn/*
+// @grant    GM_addStyle
+// @run-at   document-start
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    GM_addStyle( `
+<%= cssContent %>
+.boxdetail .hdtitle a.title { color: <%= tarColor %>!important; }
+.crumb a { color: <%= tarColor %>!important; }
+.crumb a:first-child {border-left: 4px solid <%= tarColor %>!important;}
+.navli .playli ul.selected li .spancolor { color: <%= tarColor %>!important; }
+.notice .tit .xuetang { color: <%= tarColor %>!important; }
+.dataTables_wrapper .dataTables_paginate .paginate_button.current { background-color: <%= tarColor %>!important;}
+.calendar h3 { background-color: <%= tarColor %>!important;}
+` );
+}());
