@@ -28,9 +28,15 @@ glob(path.join(resPath, '*.css'), {}, (err, files) => {
     });
     _.forEach(tarRules, (rule, index) => {
       tarRules[index].declarations = _.filter(_.map(rule.declarations, (decl) => {
-        if (decl.value && (decl.value === _.toLower(orgColor) || decl.value === _.toUpper(orgColor))) {
+        if (!decl.value) return null;
+        if (decl.value.indexOf(_.toLower(orgColor)) >= 0) {
           const ndecl = decl;
-          ndecl.value = tarColor;
+          ndecl.value = _.replace(decl.value, _.toLower(orgColor), tarColor);
+          return ndecl;
+        }
+        if (decl.value.indexOf(_.toUpper(orgColor)) >= 0) {
+          const ndecl = decl;
+          ndecl.value = _.replace(decl.value, _.toUpper(orgColor), tarColor);
           return ndecl;
         }
         return null;
@@ -39,7 +45,7 @@ glob(path.join(resPath, '*.css'), {}, (err, files) => {
     obj.stylesheet.rules = tarRules;
     tarCssList.push(css.stringify(obj, { compress: true }));
   });
-  const cssResults = _.join(tarCssList, ' ');
+  const cssResults = _.join(tarCssList, '\n');
   fs.writeFileSync('res/result.css', cssResults);
   // console.log(cssResults);
 });
